@@ -1,7 +1,7 @@
 let CACHE_NAME = 'pc-cache';
 const DATA_CACHE_NAME = 'pc-data-cache';
 
-const urlToCache = [
+const urlsToCache = [
     "/",
     "/index.js",
     "/db.js",
@@ -15,7 +15,7 @@ self.addEventListener("install", function(event) {
   event.waitUntil(
     caches.open(CACHE_NAME).then(function(cache) {
       console.log("Opened cache");
-      return cache.addAll(urlToCache);
+      return cache.addAll(urlsToCache);
     })
   );
 });
